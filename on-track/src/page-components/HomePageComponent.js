@@ -4,7 +4,8 @@ function HomePageComponent() {
   return (
     <div className='homeMenuContainer'>
       <div className='homeTitleContainer'>
-        <h1>Welcome to ON-TRACK</h1>
+        <h1>ON-TRACK</h1>
+        <h2>Welcome!</h2>
         <h2>Let's not waste any time</h2>
       </div>
       <button className='homePageButton'>Today</button>

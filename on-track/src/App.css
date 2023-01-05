@@ -4,8 +4,8 @@ body {
 }
 
 .homeMenuContainer {
-  background-image: linear-gradient(to bottom right, rgb(177, 177, 177), rgb(78, 78, 78));
-  width: 40vw;
+  background-image: linear-gradient(to bottom right, rgb(9, 0, 88), rgb(2, 0, 32));
+  width: 80vw;
   height: 60vh;
   margin: auto;
   border: 3px solid black;
@@ -13,16 +13,21 @@ body {
 }
 
 .homeTitleContainer {
-  background-image: linear-gradient(to bottom right, rgb(255, 115, 0), rgb(255, 142, 90));
+  background-image: linear-gradient(to bottom right, rgb(85, 85, 255), rgb(80, 80, 173));
   text-align: center;
   margin: auto;
   border: 3px solid black;
 }
 
 .homePageButton {
+  background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(255, 55, 55));
+  border: 2px solid rgb(134, 17, 17);
+  border-radius: 15px;
+  font-family: "Georgia";
+  font-size: 1em;
   display: block;
-  width: 15vw;
-  height: 5vh;
+  width: 35vw;
+  height: 7vh;
   margin: auto;
   margin-bottom: 2vh;
   margin-top: 2vh;
