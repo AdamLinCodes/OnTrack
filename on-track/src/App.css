@@ -1,34 +1,56 @@
 body {
-  background-image: linear-gradient(to bottom right, rgb(0, 0, 255), rgb(39, 39, 175));
+  background-color: rgb(237, 242, 244);
   height: 100vh;
 }
 
 .homeMenuContainer {
-  background-image: linear-gradient(to bottom right, rgb(9, 0, 88), rgb(2, 0, 32));
+  background-color: rgb(141, 153, 174);
   width: 80vw;
   height: 60vh;
   margin: auto;
   border: 3px solid black;
   padding: 2vh;
+  border-radius: 25px;
 }
 
 .homeTitleContainer {
-  background-image: linear-gradient(to bottom right, rgb(85, 85, 255), rgb(80, 80, 173));
+  background-color: rgb(165, 186, 221);
   text-align: center;
   margin: auto;
   border: 3px solid black;
+  border-radius: 15px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.homePageButton {
-  background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(255, 55, 55));
-  border: 2px solid rgb(134, 17, 17);
-  border-radius: 15px;
-  font-family: "Georgia";
-  font-size: 1em;
+.homePageButtonContainer {
   display: block;
   width: 35vw;
   height: 7vh;
   margin: auto;
   margin-bottom: 2vh;
   margin-top: 2vh;
+}
+
+.homePageButton {
+  background-color: rgb(239, 35, 60);
+  border: 0px;
+  border-radius: 15px;
+  font-family: "Georgia";
+  font-size: 2vh;
+  width: 35vw;
+  height: 7vh;
+  margin: auto;
+  display: block;
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.homePageButton:hover {
+  background-color: rgb(217, 4, 41);
+}
+.homePageButton:active {
+  width: 34vw;
+  height: 6vh;
 }
