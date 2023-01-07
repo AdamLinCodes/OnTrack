@@ -50,6 +50,7 @@ body {
 .homePageButton:hover {
   background-color: rgb(217, 4, 41);
 }
+
 .homePageButton:active {
   width: 34vw;
   height: 6vh;
