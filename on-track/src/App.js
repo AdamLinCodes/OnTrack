@@ -1,10 +1,14 @@
 import './App.css';
-import HomePageComponent from './page-components/HomePageComponent';
+import MainPage from './page-components/MainPage';
+import { Route } from 'react-router-dom'; 
+import LoginPage from './page-components/LoginPage';
+
 
 function App() {
   return (
     <div className="App">
-      <HomePageComponent/>
+      <Route exact path='/' component={MainPage}/>
+      <Route exact path='/login' component={LoginPage}/>
     </div>
   );
 }
