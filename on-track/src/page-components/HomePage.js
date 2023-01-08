@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function HomePageComponent() {
   return (
@@ -15,4 +15,4 @@ function HomePageComponent() {
   )
 }
 
-export default HomePageComponent
+export default HomePageComponent;

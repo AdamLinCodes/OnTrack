@@ -3,6 +3,12 @@ body {
   height: 100vh;
 }
 
+/*No default css for links, which we use for routing*/
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
 .homeMenuContainer {
   background-color: rgb(141, 153, 174);
   width: 80vw;

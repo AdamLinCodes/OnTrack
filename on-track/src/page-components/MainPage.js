@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'; 
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function MainPage() {
   return (
@@ -21,4 +21,4 @@ function MainPage() {
   )
 }
 
-export default MainPage
+export default MainPage;
