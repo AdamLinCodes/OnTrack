@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 
 function MainPage() {
   return (
-    <div className='homeMenuContainer'>
-      <div className='homeTitleContainer'>
+    <div className='menuContainer'>
+      <div className='titleContainer'>
         <h1>ON-TRACK</h1>
         <h2>Welcome!</h2>
         <h2>Let's not waste any time</h2>
       </div>
 
-      <div className='homePageButtonContainer'>
-        <Link to='/login'><button className='homePageButton'>Login</button></Link>
+      <div className='buttonContainer'>
+        <Link to='/login'><button className='button'>Login</button></Link>
       </div>
 
-      <div className='homePageButtonContainer'>
-        <button className='homePageButton'>Register</button>
+      <div className='buttonContainer'>
+        <button className='button'>Register</button>
       </div>
     </div>
   )
