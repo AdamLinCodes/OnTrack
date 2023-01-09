@@ -16,6 +16,13 @@ const userSchema = new Schema({
     trim: true,       //gets rid of extra spaces
     minlength: 3      //must be at least 3 characters
   },
+  email: {
+    type: String,     //data type
+    required: true,   //cant be empty
+    unique: true,     //must be unique
+    trim: true,       //gets rid of extra spaces
+    minlength: 4      //must be at least 3 characters
+  }
 }, {
   timestamps: true,   //will include a field for when it was made/updated
 });
