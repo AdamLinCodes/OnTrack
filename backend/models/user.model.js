@@ -22,7 +22,14 @@ const userSchema = new Schema({
     unique: true,     //must be unique
     trim: true,       //gets rid of extra spaces
     minlength: 4      //must be at least 3 characters
+  },
+  birthday: {
+    type: Date,       //data type
+    required: true,   //cant be empty
+    min: new Date(1900, 0, 1), // cant be 123 yrs old
+    max: new Date() // birthday must be in the past
   }
+  
 }, {
   timestamps: true,   //will include a field for when it was made/updated
 });
