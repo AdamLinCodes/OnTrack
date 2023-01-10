@@ -24,6 +24,7 @@ function RegisterForm() {
           'email':email,
           'birthday':birthday,
         });
+        document.location.href = '/home';
         console.log(response.data);
       } catch (error) {
         console.error(error);

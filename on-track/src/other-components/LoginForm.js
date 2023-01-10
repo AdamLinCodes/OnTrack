@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function LoginForm() {
@@ -34,25 +35,29 @@ function LoginForm() {
   
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="username">Username:</label>
-      <input
-        type="text"
-        id="username"
-        value={username}
-        onChange={event => setUsername(event.target.value)}
-      />
-      <br />
-      <label htmlFor="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        value={password}
-        onChange={event => setPassword(event.target.value)}
-      />
-      <br />
-      <button type="submit">Log in</button>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          value={username}
+          onChange={event => setUsername(event.target.value)}
+        />
+        <br />
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={event => setPassword(event.target.value)}
+        />
+        <br />
+        <button type="submit">Log in</button>
+      </form>
+
+      <Link to='/register'><button>Register</button></Link>
+    </div>
   );
 }
 

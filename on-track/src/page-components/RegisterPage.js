@@ -10,7 +10,8 @@ function RegisterPage() {
           <h1>ON-TRACK</h1>
           <h2>Let's not waste any time and get registered!</h2>
         </div>
-        <RegisterForm></RegisterForm>
+        <RegisterForm/>
+        <hr></hr>
         <h3 class="alreadyLogin">If you already have an account then login</h3>
         <div className='buttonContainer'>
           <Link to='/login'><button className='button'>Login</button></Link>
