@@ -13,7 +13,7 @@ a:active { text-decoration: none; }
 .menuContainer {
   background-color: rgb(141, 153, 174);
   width: 80vw;
-  height: 60vh;
+  /*height: 60vh;*/
   margin: auto;
   border: 3px solid black;
   padding: 2vh;
@@ -62,3 +62,30 @@ a:active { text-decoration: none; }
   width: 34vw;
   height: 6vh;
 }
+
+.registerForm {
+  width: 35vw;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.alreadyLogin {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.registerForm label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.registerForm input {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
