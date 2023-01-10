@@ -6,18 +6,23 @@ function RegisterForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [birthday, setBirthday] = useState('');
+
 
   const handleSubmit = async event => {
     event.preventDefault();
     console.log(`Username: ${username}`);
     console.log(`Password: ${password}`);
     console.log(`Email: ${email}`);
+    console.log(`Birthday: ${birthday}`);
+
     // validate form values and submit them to the server
     try {
         const response = await axios.post('http://localhost:8080/users/add', {
           'username':username,
           'password':password,
           'email':email,
+          'birthday':birthday,
         });
         console.log(response.data);
       } catch (error) {
@@ -53,7 +58,16 @@ function RegisterForm() {
       />
       <br />
       <button type="submit">Log in</button>
+      <label htmlFor="birthday">Birthday:</label>
+      <input
+        type="date"
+        id="birthday"
+        value={birthday}
+        onChange={event => setBirthday(event.target.value)}
+      />
+      <br />
     </form>
+    
   );
 }
 
