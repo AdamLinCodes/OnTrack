@@ -19,7 +19,7 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/checkuser').get( (req, res) => {
+router.route('/checkuser').post( (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 

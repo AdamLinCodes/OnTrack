@@ -15,7 +15,7 @@ function MainPage() {
       </div>
 
       <div className='buttonContainer'>
-      <Link to='/register'><button className='button'>Register</button></Link>
+        <Link to='/register'><button className='button'>Register</button></Link>
       </div>
     </div>
   )
