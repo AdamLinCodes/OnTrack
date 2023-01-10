@@ -24,6 +24,7 @@ function RegisterForm() {
           'email':email,
           'birthday':birthday,
         });
+        document.location.href = '/home';
         console.log(response.data);
       } catch (error) {
         console.error(error);
@@ -57,7 +58,6 @@ function RegisterForm() {
         onChange={event => setEmail(event.target.value)}
       />
       <br />
-      <button type="submit">Log in</button>
       <label htmlFor="birthday">Birthday:</label>
       <input
         type="date"
@@ -66,6 +66,7 @@ function RegisterForm() {
         onChange={event => setBirthday(event.target.value)}
       />
       <br />
+      <button type="submit">Register</button>
     </form>
     
   );
