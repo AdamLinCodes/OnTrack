@@ -9,7 +9,27 @@ a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 
-/*Default button styles*/
+/*Below is the css for the MainPage component*/
+.menuContainer {
+  background-color: rgb(141, 153, 174);
+  width: 80vw;
+  /*height: 60vh;*/
+  margin: auto;
+  border: 3px solid black;
+  padding: 2vh;
+  border-radius: 25px;
+}
+
+.titleContainer {
+  background-color: rgb(165, 186, 221);
+  text-align: center;
+  margin: auto;
+  border: 3px solid black;
+  border-radius: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .buttonContainer {
   display: block;
   width: 35vw;
@@ -41,4 +61,51 @@ a:active { text-decoration: none; }
 .button:active {
   width: 34vw;
   height: 6vh;
+}
+
+.registerForm {
+  width: 35vw;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.alreadyLogin {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.registerForm label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.registerForm input {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.loginForm {
+  width: 35vw;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.loginForm label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.loginForm input {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
