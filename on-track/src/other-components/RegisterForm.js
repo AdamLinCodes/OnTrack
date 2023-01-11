@@ -12,10 +12,10 @@ function RegisterForm() {
 
   const handleSubmit = async event => {
     event.preventDefault();
-    console.log(`Username: ${username}`);
+    /* console.log(`Username: ${username}`);
     console.log(`Password: ${password}`);
     console.log(`Email: ${email}`);
-    console.log(`Birthday: ${birthday}`);
+    console.log(`Birthday: ${birthday}`); */
 
     // validate form values and submit them to the server
     try {
