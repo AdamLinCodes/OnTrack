@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import '../styles/login.css';
 
 function LoginForm() {
   const [username, setUsername] = useState('');
@@ -56,7 +57,7 @@ function LoginForm() {
         <button type="submit">Log in</button>
       </form>
 
-      <Link to='/register'><button>Register</button></Link>
+      <Link to='/register' className='registerLink'>Register</Link>
     </div>
   );
 }
