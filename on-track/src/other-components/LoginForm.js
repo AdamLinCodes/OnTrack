@@ -37,7 +37,7 @@ function LoginForm() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="loginForm" onSubmit={handleSubmit}>
         <label htmlFor="username">Username:</label>
         <input
           type="text"
@@ -54,10 +54,10 @@ function LoginForm() {
           onChange={event => setPassword(event.target.value)}
         />
         <br />
-        <button type="submit">Log in</button>
+        <div className="buttonContainer">
+          <button className="button" type="submit">Log in</button>
+        </div>
       </form>
-
-      <Link to='/register' className='registerLink'>Register</Link>
     </div>
   );
 }

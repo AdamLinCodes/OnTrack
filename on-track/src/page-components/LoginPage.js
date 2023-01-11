@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginForm from '../other-components/LoginForm'
 import { Link } from 'react-router-dom';
+import '../styles/login.css';
 
 function LoginPage() {
   return (
@@ -11,12 +12,11 @@ function LoginPage() {
           <h2>Let's not waste any time and get registered!</h2>
         </div>
         <LoginForm/>
-        <hr></hr>
-        <h3 className="alreadyLogin">If you forg</h3>
-        <div className='buttonContainer'>
-          <Link to='/login'><button className='button'>Login</button></Link>
-        </div>
-
+        <hr/>
+        <h3 className="needRegister">
+          Don't have an account? Then&nbsp;
+          <Link to='/register' className='registerLink'>Register</Link>
+        </h3>
       </div>
     </div>
   )

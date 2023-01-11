@@ -1,6 +1,7 @@
 import React from 'react';
 import RegisterForm from '../other-components/RegisterForm';
 import { Link } from 'react-router-dom';
+import '../styles/register.css';
 
 function RegisterPage() {
   return (
@@ -12,11 +13,10 @@ function RegisterPage() {
         </div>
         <RegisterForm/>
         <hr></hr>
-        <h3 className="alreadyLogin">If you already have an account then login</h3>
-        <div className='buttonContainer'>
-          <Link to='/login'><button className='button'>Login</button></Link>
-        </div>
-
+        <h3 className="needLogin">
+          If you already have an account then&nbsp;
+          <Link to='/'>Login</Link>
+        </h3>
       </div>
     </div>
   )
