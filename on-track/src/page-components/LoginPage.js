@@ -1,5 +1,6 @@
 import React from 'react';
 import LoginForm from '../other-components/LoginForm'
+import { Link } from 'react-router-dom';
 
 function LoginPage() {
   return (
@@ -11,7 +12,7 @@ function LoginPage() {
         </div>
         <LoginForm/>
         <hr></hr>
-        <h3 class="alreadyLogin">If you forg</h3>
+        <h3 className="alreadyLogin">If you forg</h3>
         <div className='buttonContainer'>
           <Link to='/login'><button className='button'>Login</button></Link>
         </div>

@@ -33,7 +33,7 @@ function RegisterForm() {
   
 
   return (
-    <form class="registerForm" onSubmit={handleSubmit}>
+    <form className="registerForm" onSubmit={handleSubmit}>
       <label htmlFor="username">Username:</label>
       <input
         type="text"
@@ -66,7 +66,7 @@ function RegisterForm() {
         onChange={event => setBirthday(event.target.value)}
       />
       <br />
-      <div class="buttonContainer">
+      <div className="buttonContainer">
         <button type="submit" className='button'>Register</button>
       </div>
     </form>

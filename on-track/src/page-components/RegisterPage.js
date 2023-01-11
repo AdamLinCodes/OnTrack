@@ -12,7 +12,7 @@ function RegisterPage() {
         </div>
         <RegisterForm/>
         <hr></hr>
-        <h3 class="alreadyLogin">If you already have an account then login</h3>
+        <h3 className="alreadyLogin">If you already have an account then login</h3>
         <div className='buttonContainer'>
           <Link to='/login'><button className='button'>Login</button></Link>
         </div>
