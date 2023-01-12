@@ -1,0 +1,17 @@
+POST Request:
+	http://localhost:8080/tasks/add
+	
+	Body: 
+	{
+		"userId": 	"63bc9144f8ece1e226062a5b",
+		"goal":	"Get Fit",
+		"task": 	"<PUT SOMETHING HERE">,
+	}
+
+GET Requests:
+	Get all the tasks made by a 'AdamLin':
+	http://localhost:8080/tasks/tasksbyuser/63bc9144f8ece1e226062a5b
+
+	Get all the tasks made by 'AdamLin' and which are of the goal '1600 Chess'
+	http://localhost:8080/tasks/tasksbygoal/63bc9144f8ece1e226062a5b/1600%20Chess
+

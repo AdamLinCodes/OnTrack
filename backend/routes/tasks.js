@@ -10,12 +10,12 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
   const userId = req.body.userId;
   const goal = req.body.goal;
-  const taskName = req.body.taskName;
+  const task = req.body.task;
   const duration = req.body.duration ?? null;
   const startTime = req.body.startTime ?? null;
   const endTime = req.body.endTime ?? null;
 
-  const newTask = new Task({userId, goal, taskName, duration, startTime, endTime});
+  const newTask = new Task({userId, goal, task, duration, startTime, endTime});
 
   newTask.save()
     .then(() => res.json('Task added!'))

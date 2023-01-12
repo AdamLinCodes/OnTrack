@@ -11,7 +11,7 @@ const taskSchema = new Schema({
     type: String,
     required: true
   },
-  taskName: {
+  task: {
     type: String,
     required: true,
   },
@@ -24,7 +24,7 @@ const taskSchema = new Schema({
       min: [1, 'Hours must be within 1 - 24'],
       max: [24, 'Hours must be within 1 - 24']
     },
-    minutes: {
+    minute: {
       type: Number,
       min: [0, 'Minutes must be within 0 - 59'],
       max: [59, 'Minutes must be within 0 - 59']
