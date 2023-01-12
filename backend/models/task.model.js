@@ -7,8 +7,8 @@ const taskSchema = new Schema({
     type: Schema.Types.ObjectId,
     required: true
   },
-  goalId: {
-    type: Schema.Types.ObjectId,
+  goal: {
+    type: String,
     required: true
   },
   taskName: {
@@ -18,11 +18,29 @@ const taskSchema = new Schema({
   duration: {// in minutes
     type: Number,
   },
-  startTime: { // we'll only check getHours and getMinutes of the Date type
-    type: Date,
+  startTime: {
+    hour: {
+      type: Number,
+      min: [1, 'Hours must be within 1 - 24'],
+      max: [24, 'Hours must be within 1 - 24']
+    },
+    minutes: {
+      type: Number,
+      min: [0, 'Minutes must be within 0 - 59'],
+      max: [59, 'Minutes must be within 0 - 59']
+    }
   },
-  endTime: { // we'll only check getHours and getMinutes of the Date type
-    type: Date,
+  endTime: {  
+    hour: {
+      type: Number,
+      min: [1, 'Hours must be within 1 - 24'],
+      max: [24, 'Hours must be within 1 - 24']
+    },
+    minutes: {
+      type: Number,
+      min: [0, 'Minutes must be within 0 - 59'],
+      max: [59, 'Minutes must be within 0 - 59']
+    }
   }
 }, {
   timestamps: true,   //will include a field for when it was made/updated
