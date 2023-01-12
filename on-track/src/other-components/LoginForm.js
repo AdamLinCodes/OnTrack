@@ -8,8 +8,8 @@ function LoginForm() {
 
   const handleSubmit = async event => {
     event.preventDefault();
-    console.log(`Username: ${username}`);
-    console.log(`Password: ${password}`);
+/*  console.log(`Username: ${username}`);
+    console.log(`Password: ${password}`); */
 
     // validate form values and submit them to the server
     try {
