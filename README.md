@@ -9,4 +9,16 @@ OnTrack is being build on a MERN tech-stack (Mongodb/Mongoose, Express, React.js
 The co-designers and co-developers for this application are two Computer Science Majors Adam Lin, and Kyle Newbigging. We are always looking for advice on how we can improve as developers, so please let us know your thoughts on our current implementation :)
 
 ### Installation Process
-1. Clone the repository ```git clone <```
+1. Clone the repository ```git clone https://github.com/AdamLinCodes/OnTrack.git```
+
+2. Change directories into ```/on-track``` then install dependencies ```cd on-track && npm i```
+
+3. Do the same for the backend ```cd backend && npm i```
+
+4. Add your mongoDB URI to the ```.env``` file so that the application can connect to your database. Don't forget to include your username and password in your URI.
+  ```ATLAS_URI=<YOUR MONGODB URI HERE>```
+  
+5. Open two terminals. One will run your front end, and the other will run the backend.
+    a) In terminal 1, cd into ```/on-track``` and run ```npm start```
+    
+    b) In terminal 2, cd into ```/backkend``` and run ```node server.js```
