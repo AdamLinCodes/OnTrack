@@ -18,6 +18,10 @@ const taskSchema = new Schema({
   duration: {// in minutes
     type: Number,
   },
+  frequency: {
+    type: String,
+    required: true
+  },
   startTime: {
     hour: {
       type: Number,
