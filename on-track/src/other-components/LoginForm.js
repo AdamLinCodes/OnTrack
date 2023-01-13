@@ -32,7 +32,6 @@ function LoginForm() {
         console.error(error);
       }
   };
-  
 
   return (
     <div>
