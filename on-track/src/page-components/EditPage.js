@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/edit.css';
+import EditForm from '../other-components/EditForm'
 
 function EditPage() {
 
