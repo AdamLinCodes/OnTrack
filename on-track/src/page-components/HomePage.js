@@ -12,7 +12,7 @@ function HomePage() {
       </div>
 
       <div className='buttonContainer'>
-        <button className='button'>Todo</button>
+        <Link to='/todo'> <button className='button'>Todo</button></Link>
       </div>
 
       <div className='buttonContainer'>
