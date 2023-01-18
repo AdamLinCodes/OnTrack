@@ -18,11 +18,15 @@ const taskSchema = new Schema({
   duration: {// in minutes
     type: Number,
   },
+  frequency: {
+    type: String,
+    required: true
+  },
   startTime: {
     hour: {
       type: Number,
-      min: [1, 'Hours must be within 1 - 24'],
-      max: [24, 'Hours must be within 1 - 24']
+      min: [0, 'Hours must be within 0 - 23'],
+      max: [23, 'Hours must be within 0 - 23']
     },
     minute: {
       type: Number,
