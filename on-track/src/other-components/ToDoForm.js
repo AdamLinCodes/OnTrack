@@ -109,6 +109,7 @@ function ToDoForm() {
                     <div className="taskContainer">
                         <div className="taskTitle">Programming</div>
                         <div className="taskDuration">7 hours!</div>
+                        
                     </div>
                 </div>
             </div>
