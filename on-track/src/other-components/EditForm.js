@@ -9,7 +9,6 @@ function EditForm() {
       <GoalInput/>
       <TaskInput/>
       <EditTasksList/>
-      <p></p>
     </div>
   );
 }
