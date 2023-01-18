@@ -1,0 +1,72 @@
+label {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 3vh;
+}
+
+input {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.goalContainer {
+  background-color: rgb(97, 218, 255);
+  text-align: center;
+  margin: auto;
+  border: 3px solid black;
+  border-radius: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.addTaskContainer {
+  background-color: rgb(97, 218, 255);
+  text-align: center;
+  margin: auto;
+  border: 3px solid black;
+  border-radius: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.taskListContainer {
+  background-color: rgb(255, 102, 97);
+  text-align: center;
+  margin: auto;
+  border: 3px solid black;
+  border-radius: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.task {
+  background-color: #91d2dd;
+  width: 80%;
+  height: 10vh;
+  margin: 2vh;
+  margin-left: auto;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+.taskName {
+  width: min-content;
+  float: left;
+  margin: 3vh;
+}
+
+.taskDuration {
+  width: min-content;
+  float: right;
+  margin: 3vh;
+}
+
+.addButton {
+  width: 10%;
+  height: 6vh;
+}

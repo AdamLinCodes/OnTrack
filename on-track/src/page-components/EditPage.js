@@ -3,13 +3,11 @@ import '../styles/edit.css';
 import EditForm from '../other-components/EditForm'
 
 function EditPage() {
-
-    
   return (
     <div className='menuContainer'>
       <div className='titleContainer'>
-        <h1>ON-TRACK</h1>
-        <h2>Edit your Tasks!</h2>
+        <h1>Edit your tasks</h1>
+        <h2>But try not to abandon your goals :(</h2>
       </div>
       <EditForm/>
     </div>
