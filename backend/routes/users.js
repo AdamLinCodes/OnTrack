@@ -28,10 +28,13 @@ router.route('/checkuser').post( (req, res) => {
     if (err) res.status(400).json('Sorry, unable to process the request');
 
     if (user == null) {
-      res.status(200).json(false);
+      res.status(200).json(null);
     }else {
-      const userExists = (username === user.username) && (password === user.password);
-      res.status(200).json(userExists);
+      if((username === user.username) && (password === user.password)) {
+        res.status(200).json(user._id);
+      }else {
+        res.status(200).json(null);
+      }
     }
   });
 });
