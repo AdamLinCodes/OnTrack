@@ -8,20 +8,16 @@ function LoginForm() {
 
   const handleSubmit = async event => {
     event.preventDefault();
-/*  console.log(`Username: ${username}`);
-    console.log(`Password: ${password}`); */
-
-    // validate form values and submit them to the server
     try {
         const response = await axios.post('http://localhost:8080/users/checkuser', {
           username: username,
           password: password
         });
-        const validUser = response.data;
-
-        console.log(username + ', ' + password + ', ' + validUser);
+        
+        const validUser = response.data !== null;
 
         if(validUser === true) {
+          storeProfile(username, response.data);
           document.location.href = '/home';
         } else {
           setUsername('');
@@ -31,6 +27,14 @@ function LoginForm() {
       } catch (error) {
         console.error(error);
       }
+  };
+
+  function storeProfile(username, userId) {
+    const newProfile = {
+      "username": username,
+      "userId": userId
+    };
+    localStorage.setItem('profile', JSON.stringify(newProfile));
   };
 
   return (

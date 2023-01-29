@@ -1,10 +1,25 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../styles/todo.css';
+import axios from 'axios';
+
+const getProfile = () => {
+    const storedData = localStorage.getItem('profile');
+    return storedData ? JSON.parse(storedData) : null;
+};
 
 function ToDoForm() {
 
     const [toggleState, setToggleState] = useState(1);
+    const [data, setData] = useState([]);
+
+    let urlQuery = 'http://localhost:8080/tasks/tasksbyuser/' + getProfile().userId;
+
+    useEffect(() => {
+        axios.get(urlQuery)
+        .then(response => setData(response.data))
+        .catch(error => console.error(error));
+    });
 
     const toggleTab = (index) => {
         setToggleState(index);
@@ -21,97 +36,43 @@ function ToDoForm() {
         </div>
         <div className='tabContent'>
             <div className={toggleState === 1 ? "content activeContent" : "content"}>
-                {/*TODO This is going to be used in new class component? */}
-                <div className="task">
-                    <input type="checkbox" className='checkbox'/>
-                    <div className="taskContainer">
-                        <div className="taskTitle">Workout</div>
-                        <div className="taskDuration">1 hour</div>
-                    </div>
-                </div>
+                <ul>
+                    {data.filter((item) => {
+                        return item.frequency === "daily"
+                    }).map(item => (
+                        <li key={crypto.randomUUID()}>{item.task}</li>
+                    ))}
+                </ul>
             </div>
             <div className={toggleState === 2 ? "content activeContent" : "content"}>
-                {/*TODO This is going to be used in new class component? */}
-                <div className="task">
-                    <input type="checkbox" className='checkbox'/>
-                    <div className="taskContainer">
-                        <div className="taskTitle">Workout</div>
-                        <div className="taskDuration">1 hour</div>
-                    </div>
-                </div>
-                <div className="task">
-                    <input type="checkbox" className='checkbox'/>
-                    <div className="taskContainer">
-                        <div className="taskTitle">Guitar</div>
-                        <div className="taskDuration">30 mins</div>
-                    </div>
-                </div>
+                <ul>
+                    {data.filter((item) => {
+                        return item.frequency === "weekly"
+                    }).map(item => (
+                        <li key={crypto.randomUUID()}>{item.task}</li>
+                    ))}
+                </ul>
             </div>
             <div className={toggleState === 3 ? "content activeContent" : "content"}>
-                {/*TODO This is going to be used in new class component? */}
-                <div className="task">
-                    <input type="checkbox" className='checkbox'/>
-                    <div className="taskContainer">
-                        <div className="taskTitle">Workout</div>
-                        <div className="taskDuration">1 hour</div>
-                    </div>
-                </div>
-                <div className="task">
-                    <input type="checkbox" className='checkbox'/>
-                    <div className="taskContainer">
-                        <div className="taskTitle">Guitar</div>
-                        <div className="taskDuration">30 mins</div>
-                    </div>
-                </div>
-                <div className="task">
-                    <input type="checkbox" className='checkbox'/>
-                    <div className="taskContainer">
-                        <div className="taskTitle">Apply for Jobs</div>
-                        <div className="taskDuration">2 hours</div>
-                    </div>
-                </div>
+                <ul>
+                    {data.filter((item) => {
+                        return item.frequency === "monthly"
+                    }).map(item => (
+                        <li key={crypto.randomUUID()}>{item.task}</li>
+                    ))}
+                </ul>
             </div>
             <div className={toggleState === 4 ? "content activeContent" : "content"}>
-                {/*TODO This is going to be used in new class component? */}
-                <div className="task">
-                    <input type="checkbox" className='checkbox'/>
-                    <div className="taskContainer">
-                        <div className="taskTitle">Guitar</div>
-                        <div className="taskDuration">30 mins</div>
-                    </div>
-                </div>
-                <div className="task">
-                    <input type="checkbox" className='checkbox'/>
-                    <div className="taskContainer">
-                        <div className="taskTitle">Workout</div>
-                        <div className="taskDuration">1 hour</div>
-                    </div>
-                </div>
+                <ul>
+                    {data.filter((item) => {
+                        return item.frequency === "yearly"
+                    }).map(item => (
+                        <li key={crypto.randomUUID()}>{item.task}</li>
+                    ))}
+                </ul>
             </div>
             <div className={toggleState === 5 ? "content activeContent" : "content"}>
                 {/*TODO This is going to be used in new class component? */}
-                <div className="task">
-                    <input type="checkbox" className='checkbox'/>
-                    <div className="taskContainer">
-                        <div className="taskTitle">Workout</div>
-                        <div className="taskDuration">1 hour</div>
-                    </div>
-                </div>
-                <div className="task">
-                    <input type="checkbox" className='checkbox'/>
-                    <div className="taskContainer">
-                        <div className="taskTitle">Guitar</div>
-                        <div className="taskDuration">30 mins</div>
-                    </div>
-                </div>
-                <div className="task">
-                    <input type="checkbox" className='checkbox'/>
-                    <div className="taskContainer">
-                        <div className="taskTitle">Programming</div>
-                        <div className="taskDuration">7 hours!</div>
-                        
-                    </div>
-                </div>
             </div>
         </div>
     </div>
