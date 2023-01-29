@@ -6,7 +6,7 @@ label {
 }
 
 input {
-  width: 60%;
+  width: 20vw;
   padding: 12px 20px;
   margin: 16px;
   border: 1px solid #ccc;
@@ -15,29 +15,37 @@ input {
 }
 
 .goalContainer {
-  background-color: rgb(97, 218, 255);
+  width: 80%;
+  background-color: rgb(43, 45, 66);
   text-align: center;
   margin: auto;
+  margin-top: 2vh;
   border: 3px solid black;
   border-radius: 15px;
   overflow: hidden;
   white-space: nowrap;
+  color: white;
 }
 
 .addTaskContainer {
-  background-color: rgb(97, 218, 255);
+  width: 70%;
+  background-color: rgb(43, 45, 66);
   text-align: center;
   margin: auto;
+  margin-top: 2vh;
   border: 3px solid black;
   border-radius: 15px;
   overflow: hidden;
   white-space: nowrap;
+  color: white;
 }
 
 .taskListContainer {
-  background-color: rgb(255, 102, 97);
+  width: 70%;
+  background-color: rgb(239, 35, 60);
   text-align: center;
   margin: auto;
+  margin-top: 2vh;
   border: 3px solid black;
   border-radius: 15px;
   overflow: hidden;
@@ -45,28 +53,43 @@ input {
 }
 
 .task {
-  background-color: #91d2dd;
+  background-color: rgb(217, 4, 41);
   width: 80%;
-  height: 10vh;
+  height: 8vh;
   margin: 2vh;
   margin-left: auto;
   border: 2px solid black;
   border-radius: 15px;
+  color: white;
 }
 
 .taskName {
-  width: min-content;
   float: left;
-  margin: 3vh;
+  margin-left: 2vw;
 }
 
 .taskDuration {
-  width: min-content;
   float: right;
-  margin: 3vh;
 }
 
 .addButton {
   width: 10%;
   height: 6vh;
+}
+
+img {
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin-right: 1vw;
+  margin-left: 1vw;
+  margin-top: 1vh;
+}
+
+img:hover {
+  filter: invert(1);
+}
+
+img:active {
+  filter: invert(0.8);
 }
