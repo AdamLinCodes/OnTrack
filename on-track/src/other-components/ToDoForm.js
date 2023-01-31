@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import '../styles/todo.css';
 import axios from 'axios';
 
+//retrieves the userId from browser storage
 const getProfile = () => {
     const storedData = localStorage.getItem('profile');
     return storedData ? JSON.parse(storedData) : null;
@@ -11,13 +12,16 @@ const getProfile = () => {
 function ToDoForm() {
 
     const [toggleState, setToggleState] = useState(1);
-    const [data, setData] = useState([]);
+    const [tasks, setTasks] = useState([]);
 
+    //this query retrieves all tasks made by a given user (see backend/routes/tasks.js for details)
     let urlQuery = 'http://localhost:8080/tasks/tasksbyuser/' + getProfile().userId;
 
+    //useEffect hooks in, after a render has already been called, useful for when we make requests
+    //since requests often take a second to get a response back
     useEffect(() => {
         axios.get(urlQuery)
-        .then(response => setData(response.data))
+        .then(response => setTasks(response.data))
         .catch(error => console.error(error));
     });
 
@@ -37,7 +41,7 @@ function ToDoForm() {
         <div className='tabContent'>
             <div className={toggleState === 1 ? "content activeContent" : "content"}>
                 <ul>
-                    {data.filter((item) => {
+                    {tasks.filter((item) => {
                         return item.frequency === "daily"
                     }).map(item => (
                         <li key={crypto.randomUUID()}>{item.task}</li>
@@ -46,7 +50,7 @@ function ToDoForm() {
             </div>
             <div className={toggleState === 2 ? "content activeContent" : "content"}>
                 <ul>
-                    {data.filter((item) => {
+                    {tasks.filter((item) => {
                         return item.frequency === "weekly"
                     }).map(item => (
                         <li key={crypto.randomUUID()}>{item.task}</li>
@@ -55,7 +59,7 @@ function ToDoForm() {
             </div>
             <div className={toggleState === 3 ? "content activeContent" : "content"}>
                 <ul>
-                    {data.filter((item) => {
+                    {tasks.filter((item) => {
                         return item.frequency === "monthly"
                     }).map(item => (
                         <li key={crypto.randomUUID()}>{item.task}</li>
@@ -64,7 +68,7 @@ function ToDoForm() {
             </div>
             <div className={toggleState === 4 ? "content activeContent" : "content"}>
                 <ul>
-                    {data.filter((item) => {
+                    {tasks.filter((item) => {
                         return item.frequency === "yearly"
                     }).map(item => (
                         <li key={crypto.randomUUID()}>{item.task}</li>

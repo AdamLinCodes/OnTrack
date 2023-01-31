@@ -1,6 +1,6 @@
 import React from 'react';
-import editTaskImage from '../assets/editTask.png';
-import removeTaskImage from '../assets/removeTask.png';
+import editTaskImage from '../../assets/editTask.png';
+import removeTaskImage from '../../assets/removeTask.png';
 
 function TaskForEdit() {
   return (
