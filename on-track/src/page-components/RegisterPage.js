@@ -1,7 +1,6 @@
 import React from 'react';
 import RegisterForm from '../other-components/RegisterForm';
 import { Link } from 'react-router-dom';
-import '../styles/register.css';
 
 function RegisterPage() {
   return (

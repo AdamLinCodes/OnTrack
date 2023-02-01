@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import '../styles/todo.css';
 import axios from 'axios';
 
 //retrieves the userId from browser storage
@@ -39,6 +38,9 @@ function ToDoForm() {
             <div className={toggleState === 5 ? "tab activeTab" : "tab"} onClick={() => toggleTab(5)}>Custom..</div>
         </div>
         <div className='tabContent'>
+            {/* Daily tab starts here */}
+            <hr/>
+            <h2>Daily</h2>
             <div className={toggleState === 1 ? "content activeContent" : "content"}>
                 <ul>
                     {tasks.filter((item) => {
@@ -48,6 +50,10 @@ function ToDoForm() {
                     ))}
                 </ul>
             </div>
+
+            {/* Weekly tab starts here */}
+            <hr/>
+            <h2>Weekly</h2>
             <div className={toggleState === 2 ? "content activeContent" : "content"}>
                 <ul>
                     {tasks.filter((item) => {
@@ -57,6 +63,10 @@ function ToDoForm() {
                     ))}
                 </ul>
             </div>
+
+            {/* Monthly tab starts here */}
+            <hr/>
+            <h2>Montly</h2>
             <div className={toggleState === 3 ? "content activeContent" : "content"}>
                 <ul>
                     {tasks.filter((item) => {
@@ -66,6 +76,10 @@ function ToDoForm() {
                     ))}
                 </ul>
             </div>
+
+            {/* Yearly tab starts here */}
+            <hr/>
+            <h2>Yearly</h2>
             <div className={toggleState === 4 ? "content activeContent" : "content"}>
                 <ul>
                     {tasks.filter((item) => {
@@ -75,6 +89,9 @@ function ToDoForm() {
                     ))}
                 </ul>
             </div>
+
+            {/* Custom tab starts here */}
+            <hr/>
             <div className={toggleState === 5 ? "content activeContent" : "content"}>
                 {/*TODO This is going to be used in new class component? */}
             </div>

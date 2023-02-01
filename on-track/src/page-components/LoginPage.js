@@ -1,7 +1,6 @@
 import React from 'react';
 import LoginForm from '../other-components/LoginForm'
 import { Link } from 'react-router-dom';
-import '../styles/login.css';
 
 function LoginPage() {
   return (
