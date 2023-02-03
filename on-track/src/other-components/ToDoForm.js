@@ -18,7 +18,7 @@ function ToDoForm() {
 
     //useEffect hooks in, after a render has already been called, useful for when we make requests
     //since requests often take a second to get a response back
-    useEffect(async () => {
+    useEffect(() => {
         axios.get(urlQuery)
         .then(response => setTasks(response.data))
         .catch(error => console.error(error));
