@@ -27,7 +27,7 @@ const userSchema = new Schema({
     type: Date,       //data type
     required: true,   //cant be empty
     min: new Date(1900, 0, 1), // cant be 123 yrs old
-    max: new Date() // birthday must be in the past
+    max: new Date() // THis might break something, fyi
   }
   
 }, {

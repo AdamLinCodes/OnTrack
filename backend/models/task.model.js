@@ -7,11 +7,11 @@ const taskSchema = new Schema({
     type: Schema.Types.ObjectId,
     required: true
   },
-  goal: {
-    type: String,
+  goalId: {
+    type: Schema.Types.ObjectId,
     required: true
   },
-  task: {
+  taskName: {
     type: String,
     required: true,
   },
