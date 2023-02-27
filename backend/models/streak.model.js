@@ -11,6 +11,10 @@ const streakSchema = new Schema({
     type: Schema.Types.ObjectId,
     required: true,   //cant be empty
   },
+  goalId: {
+    type: Schema.Types.ObjectId,
+    required: true,   //cant be empty
+  },
   startDate: {
     type: Date,       //data type
     required: true,   //cant be empty
@@ -18,7 +22,6 @@ const streakSchema = new Schema({
   },
   endDate: {
     type: Date,       //data type
-    required: true,   //cant be empty
     min: new Date(1900, 0, 1), // cant be 123 yrs old
   },
 }, {
