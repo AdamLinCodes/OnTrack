@@ -46,7 +46,7 @@ function ToDoForm() {
                     {tasks.filter((item) => {
                         return item.frequency === "daily"
                     }).map(item => (
-                        <li key={crypto.randomUUID()}>{item.task}</li>
+                        <li key={crypto.randomUUID()}>{item.taskName}</li>
                     ))}
                 </ul>
             </div>
@@ -59,7 +59,7 @@ function ToDoForm() {
                     {tasks.filter((item) => {
                         return item.frequency === "weekly"
                     }).map(item => (
-                        <li key={crypto.randomUUID()}>{item.task}</li>
+                        <li key={crypto.randomUUID()}>{item.taskName}</li>
                     ))}
                 </ul>
             </div>
@@ -72,7 +72,7 @@ function ToDoForm() {
                     {tasks.filter((item) => {
                         return item.frequency === "monthly"
                     }).map(item => (
-                        <li key={crypto.randomUUID()}>{item.task}</li>
+                        <li key={crypto.randomUUID()}>{item.taskName}</li>
                     ))}
                 </ul>
             </div>
@@ -85,7 +85,7 @@ function ToDoForm() {
                     {tasks.filter((item) => {
                         return item.frequency === "yearly"
                     }).map(item => (
-                        <li key={crypto.randomUUID()}>{item.task}</li>
+                        <li key={crypto.randomUUID()}>{item.taskName}</li>
                     ))}
                 </ul>
             </div>

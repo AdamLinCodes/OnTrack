@@ -9,14 +9,14 @@ router.route('/').get((req, res) => {
 
 router.route('/add').post((req, res) => {
   const userId = req.body.userId;
-  const goal = req.body.goal;
-  const task = req.body.task;
+  const goalId = req.body.goalId;
+  const taskName = req.body.taskName;
   const frequency = req.body.frequency;
   const duration = req.body.duration ?? null;
   const startTime = req.body.startTime ?? null;
   const endTime = req.body.endTime ?? null;
 
-  const newTask = new Task({userId, goal, task, frequency, duration, startTime, endTime});
+  const newTask = new Task({userId, goalId, taskName, frequency, duration, startTime, endTime});
 
   newTask.save()
     .then(() => res.json('Task added!'))
@@ -27,15 +27,6 @@ router.route('/tasksbyuser/:userId').get((req, res) => {
   const userId = req.params.userId;
 
   Task.find({userId: userId})
-    .then(users => res.json(users))
-    .catch(err => res.status(400).json('Error: ' + err));
-});
-
-router.route('/tasksbygoal/:userId/:goal').get((req, res) => {
-  const userId = req.params.userId;
-  const goal = req.params.goal;
-
-  Task.find({userId: userId, goal: goal})
     .then(users => res.json(users))
     .catch(err => res.status(400).json('Error: ' + err));
 });
