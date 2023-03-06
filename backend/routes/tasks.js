@@ -19,7 +19,7 @@ router.route('/add').post((req, res) => {
   const newTask = new Task({userId, goalId, taskName, frequency, duration, startTime, endTime});
 
   newTask.save()
-    .then(() => res.json('Task added!'))
+    .then(() => res.status(200).json('Task added!'))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -27,7 +27,15 @@ router.route('/tasksbyuser/:userId').get((req, res) => {
   const userId = req.params.userId;
 
   Task.find({userId: userId})
-    .then(users => res.json(users))
+    .then(tasks => res.status(200).json(tasks))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/tasksbygoal/:goalId').get((req, res) => {
+  const goalId = req.params.goalId;
+
+  Task.find({goalId: goalId})
+    .then(tasks => res.status(200).json(tasks))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 

@@ -1,33 +1,18 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import TasksDao from "../../daos/tasks.dao";
 
-const getProfile = () => {
-  const storedData = localStorage.getItem('profile');
-  return storedData ? JSON.parse(storedData) : null;
-};
+const taskDao = new TasksDao();
 
 function AddTask() {
   const [task, setTask] = useState("");
   const [goal, setGoal] = useState("");
   const [frequency, setFrequency] = useState("");
 
-  let urlQuery = 'http://localhost:8080/tasks/add';//getProfile().userId
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(`Task submitted: ${task}`);
 
-    try {
-      const response = await axios.post(urlQuery, {
-        "userId": getProfile().userId,
-        "goal": goal,
-        "task": task,
-        "frequency": frequency
-    });
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
+    taskDao.addTask(task, goal, frequency);
 
     setTask("");
     setGoal("");

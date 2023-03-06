@@ -1,34 +1,27 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import TasksDao from '../daos/tasks.dao';
 
-//retrieves the userId from browser storage
-const getProfile = () => {
-    const storedData = localStorage.getItem('profile');
-    return storedData ? JSON.parse(storedData) : null;
-};
+const taskDao = new TasksDao();
 
 function ToDoForm() {
 
     const [toggleState, setToggleState] = useState(1);
     const [tasks, setTasks] = useState([]);
 
-    //this query retrieves all tasks made by a given user (see backend/routes/tasks.js for details)
-    let urlQuery = 'http://localhost:8080/tasks/tasksbyuser/' + getProfile().userId;
-
-    //useEffect hooks in, after a render has already been called, useful for when we make requests
-    //since requests often take a second to get a response back
     useEffect(() => {
-        axios.get(urlQuery)
-        .then(response => setTasks(response.data))
-        .catch(error => console.error(error));
-    });
+        async function fetchData() {
+          const data = await taskDao.getAll();
+          setTasks(data);
+        }
+        fetchData();
+    }, [tasks]);
 
     const toggleTab = (index) => {
         setToggleState(index);
     }
 
-  return (
+    return (
     <div className="container">
         <div className="tabRow">
             <div className={toggleState === 1 ? "tab activeTab" : "tab"} onClick={() => toggleTab(1)}>Daily</div>

@@ -18,4 +18,11 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/goalsbyuser/:userId').get((req, res) => {
+  const userId = req.params.userId;
+
+  Goal.find({userId: userId})
+    .then(tasks => res.status(200).json(tasks))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
 module.exports = router;
